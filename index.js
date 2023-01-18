@@ -86,41 +86,62 @@ console.log(etCounter)
 
 //Bonus 2*****************/
 
-let phraseToCheck = "Was it a car or a cat I saw?"
+function palin(phraseToCheck) {
 
-let phraseToCheckWithoutSpace = ""
-
-for (let i = 0; i < phraseToCheck.length; i++) {
-  if (phraseToCheck[i] !== "," && phraseToCheck[i] !== " " && phraseToCheck[i] !== "!" && phraseToCheck[i] !== "\'"&& phraseToCheck[i] !== "?") {
-    phraseToCheckWithoutSpace += phraseToCheck[i].toLowerCase()
-  }
-}
-let phrasesHalfFirst = ""
-if(phraseToCheckWithoutSpace.length%2 === 0){
-
-   
-for (let i = phraseToCheckWithoutSpace.length / 2; i > 0; i--) {
-  phrasesHalfFirst += phraseToCheckWithoutSpace[Math.floor(i-1)]
-}
-console.log(phrasesHalfFirst);
-
+    console.log("Is it an palindrome ?", phraseToCheck)
+    let phraseToCheckWithoutSpace = ""
   
-}else{
-   
-for (let i = phraseToCheckWithoutSpace.length / 2; i > 0; i--) {
-  phrasesHalfFirst += phraseToCheckWithoutSpace[Math.floor(i)]
-}
-console.log(phrasesHalfFirst);
-}
-
-let secondPartWord = ""
-for (let i = phraseToCheckWithoutSpace.length / 2; i < phraseToCheckWithoutSpace.length; i++) {
-  secondPartWord += phraseToCheckWithoutSpace[Math.floor(i)]
-}
-console.log(secondPartWord)
-
-if (phrasesHalfFirst === secondPartWord) {
-  console.log('It\'s a palindrome')
-} else {
-  console.log('Not a Palindrome!!!!!')
-}
+    for (let i = 0; i < phraseToCheck.length; i++) {
+      if (phraseToCheck[i] !== "," && phraseToCheck[i] !== " " && phraseToCheck[i] !== "!" && phraseToCheck[i] !== "\'" && phraseToCheck[i] !== "?") {
+        phraseToCheckWithoutSpace += phraseToCheck[i].toLowerCase()
+      }
+    }
+    let phrasesHalfFirst = ""
+    if (phraseToCheckWithoutSpace.length % 2 === 0) {
+  
+  
+      for (let i = phraseToCheckWithoutSpace.length / 2; i > 0; i--) {
+        phrasesHalfFirst += phraseToCheckWithoutSpace[Math.floor(i - 1)]
+      }
+      console.log("first half word : ", phrasesHalfFirst);
+  
+  
+    } else {
+  
+      for (let i = phraseToCheckWithoutSpace.length / 2; i > 0; i--) {
+        phrasesHalfFirst += phraseToCheckWithoutSpace[Math.floor(i)]
+      }
+      console.log("first half word : ", phrasesHalfFirst);
+    }
+  
+    let secondPartWord = ""
+    for (let i = phraseToCheckWithoutSpace.length / 2; i < phraseToCheckWithoutSpace.length; i++) {
+      secondPartWord += phraseToCheckWithoutSpace[Math.floor(i)]
+    }
+    console.log("second half word : ", secondPartWord)
+  
+    if (phrasesHalfFirst === secondPartWord) {
+      console.log('YES, It\'s a palindrome')
+    } else {
+      console.log('Not a Palindrome!!!!!')
+    }
+  
+  }
+  
+  palin("A man, a plan, a canal, Panama!")
+  console.log(' ')
+  palin("Amor, Roma")
+  console.log(' ')
+  palin("race car")
+  console.log(' ')
+  palin("stack cats")
+  console.log(' ')
+  palin("step on no pets")
+  console.log(' ')
+  palin("taco cat")
+  console.log(' ')
+  palin("put it up")
+  console.log(' ')
+  palin("Was it a car or a cat I saw?")
+  console.log(' ')
+  palin("No 'x' in Nixon")
