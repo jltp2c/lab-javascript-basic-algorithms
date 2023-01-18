@@ -82,3 +82,26 @@ for (let i = 0; i < longText.length; i++) {
   
 }
 console.log(etCounter)
+
+
+//Bonus 2*****************/
+
+let phraseToCheck = "Kayak"
+let phrasesHalf = ""
+
+for (let i = 0; i < phraseToCheck.length / 2; i++) {
+  phrasesHalf += phraseToCheck[i]
+}
+
+let phrasesHalfReversed = ""
+for (let i = phrasesHalf.length - 1; i >= 0; i--) {
+  phrasesHalfReversed += phrasesHalf[i];
+}
+console.log(phrasesHalfReversed);
+
+
+let secondPartWord=""
+for (let i = phraseToCheck.length / 2; i < phraseToCheck.length; i++) {
+  secondPartWord = phraseToCheck[Math.ceil(i-1)]
+}
+console.log(secondPartWord)
