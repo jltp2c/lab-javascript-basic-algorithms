@@ -86,22 +86,41 @@ console.log(etCounter)
 
 //Bonus 2*****************/
 
-let phraseToCheck = "Kayak"
-let phrasesHalf = ""
+let phraseToCheck = "Was it a car or a cat I saw?"
 
-for (let i = 0; i < phraseToCheck.length / 2; i++) {
-  phrasesHalf += phraseToCheck[i]
+let phraseToCheckWithoutSpace = ""
+
+for (let i = 0; i < phraseToCheck.length; i++) {
+  if (phraseToCheck[i] !== "," && phraseToCheck[i] !== " " && phraseToCheck[i] !== "!" && phraseToCheck[i] !== "\'"&& phraseToCheck[i] !== "?") {
+    phraseToCheckWithoutSpace += phraseToCheck[i].toLowerCase()
+  }
+}
+let phrasesHalfFirst = ""
+if(phraseToCheckWithoutSpace.length%2 === 0){
+
+   
+for (let i = phraseToCheckWithoutSpace.length / 2; i > 0; i--) {
+  phrasesHalfFirst += phraseToCheckWithoutSpace[Math.floor(i-1)]
+}
+console.log(phrasesHalfFirst);
+
+  
+}else{
+   
+for (let i = phraseToCheckWithoutSpace.length / 2; i > 0; i--) {
+  phrasesHalfFirst += phraseToCheckWithoutSpace[Math.floor(i)]
+}
+console.log(phrasesHalfFirst);
 }
 
-let phrasesHalfReversed = ""
-for (let i = phrasesHalf.length - 1; i >= 0; i--) {
-  phrasesHalfReversed += phrasesHalf[i];
-}
-console.log(phrasesHalfReversed);
-
-
-let secondPartWord=""
-for (let i = phraseToCheck.length / 2; i < phraseToCheck.length; i++) {
-  secondPartWord = phraseToCheck[Math.ceil(i-1)]
+let secondPartWord = ""
+for (let i = phraseToCheckWithoutSpace.length / 2; i < phraseToCheckWithoutSpace.length; i++) {
+  secondPartWord += phraseToCheckWithoutSpace[Math.floor(i)]
 }
 console.log(secondPartWord)
+
+if (phrasesHalfFirst === secondPartWord) {
+  console.log('It\'s a palindrome')
+} else {
+  console.log('Not a Palindrome!!!!!')
+}
